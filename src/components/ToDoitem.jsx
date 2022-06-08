@@ -5,7 +5,7 @@ function ToDoitem (props){
 
     
     return(
-        <div   onClick= {props.onChecked()} >
+        <div   onClick= {()=> {props.onChecked(props.id)}} >
             <li >
                 {props.text}
             </li>

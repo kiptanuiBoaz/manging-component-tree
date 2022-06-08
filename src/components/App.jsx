@@ -17,10 +17,14 @@ function App() {
     setInputText("");
   }
 
-  function deleteItem(){
-    setItems ((prevItems)=>{
-
-    })
+  function deleteItem(id){
+    setItems ((prevItems) => {
+        return(
+          prevItems.filter((items, index)=>{
+            return (index !== id  )
+          } )
+        )
+      })
   };
  
   return (
@@ -41,6 +45,7 @@ function App() {
         <ul>
           {items.map((todoItem, index) => (
             <ToDoitem
+              id = {index}
               key = {index}
               text = {todoItem}
               onChecked = {deleteItem}
